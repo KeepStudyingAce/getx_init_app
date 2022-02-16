@@ -107,8 +107,12 @@ import 'package:getx_init_app/pages/fourth_page.dart';
 import 'package:getx_init_app/pages/function/obx_page.dart';
 import 'package:getx_init_app/pages/second_page.dart';
 import 'package:getx_init_app/pages/third_page.dart';
+import 'package:getx_init_app/root_tab.dart';
+import 'package:getx_init_app/welcome_page.dart';
 
 class RouteConfig {
+  static final String welcome = "/welcome";
+  static final String rootTab = "/rootTab";
   static final String first = "/first";
   static final String second = "/second";
   static final String third = "/third";
@@ -119,6 +123,8 @@ class RouteConfig {
 
   ///别名映射页面
   static final List<GetPage> getPages = [
+    GetPage(name: rootTab, page: () => RootTab()),
+    GetPage(name: welcome, page: () => WelcomePage()),
     GetPage(name: first, page: () => FirstPage()),
     GetPage(name: second, page: () => SecondPage()),
     GetPage(name: third, page: () => ThirdPage()),

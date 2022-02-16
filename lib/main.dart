@@ -27,41 +27,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       getPages: RouteConfig.getPages,
-      home: GetBuilder<AppController>(
-          init: Get.put(AppController()),
-          builder: (controller) {
-            return CupertinoTabScaffold(
-              resizeToAvoidBottomInset: false,
-              tabBar: CupertinoTabBar(
-                backgroundColor: Colors.white,
-                items: [
-                  BottomNavigationBarItem(
-                    label: "tab_home".tr,
-                    icon: Icon(Icons.home),
-                    activeIcon: Icon(Icons.home_filled),
-                  ),
-                  BottomNavigationBarItem(
-                    label: "tab_mine".tr,
-                    icon: Icon(Icons.person),
-                    activeIcon: Icon(Icons.person_outline),
-                  )
-                ],
-              ),
-              tabBuilder: (context, index) {
-                Widget item = SizedBox();
-                switch (index) {
-                  case 0:
-                    item = FirstPage();
-                    break;
-                  case 1:
-                    item = SecondPage();
-                    break;
-                  default:
-                }
-                return item;
-              },
-            );
-          }),
+      initialRoute: RouteConfig.welcome,
     );
   }
 }
